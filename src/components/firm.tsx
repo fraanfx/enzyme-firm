@@ -1,8 +1,5 @@
 import { SignatureProps } from '../components/UISignature'
-import LogoHeader from "../img/ENZYME-Logotipo.png"
-import Linkedin from '../img/Linkedin.svg'
-import Blog from '../img/Blogblog-svg1x.svg'
-import Descargable from '../img/Descargabledown-svg.svg'
+
 import '../App.css'
 
 const Signature = (props:SignatureProps) =>{
@@ -110,13 +107,13 @@ const Signature = (props:SignatureProps) =>{
                 </a>
                 </td>
                 <td>
-                <a style={{marginRight: "5px",}} href="" rel="noreferrer" target="_blank">
+                <a style={{marginRight: "5px",}} href={"https://enzyme.biz/blog"} rel="noreferrer" target="_blank">
                     <img src="https://signature.enzyme.es/Blogblog-svg1x.svg" width={"22px"} height={"22px"} alt={"Blog"}/>
                 </a>
                 </td>
                 <td>
-                <a href="https://signature.enzyme.es/Descargabledown-svg.svg" target="_blank" rel="noreferrer">
-                    <img src={Descargable} width={"22px"} height={"22px"} alt={"Descargable"}/>
+                <a href={"http://enzyme.biz/recursos"} target="_blank" rel="noreferrer">
+                    <img src="https://signature.enzyme.es/Descargabledown-svg.svg" width={"22px"} height={"22px"} alt={"Descargable"}/>
                 </a>
                 </td>
                     

@@ -3,7 +3,6 @@ import Signature from "./firm";
 import Firm from '../components/firm'
 import '../index.css'
 import { getValue } from "@testing-library/user-event/dist/utils";
-import LogoHeader from "../img/ENZYME-Logotipo.png"
 import { Button, FormControlLabel, Switch, TextField, Typography } from "@material-ui/core";
  
 export interface SignatureProps {
@@ -206,7 +205,7 @@ return(
     <>
         <div className="container column">
                 <div className="header">
-                    <img className="img-logo" src={LogoHeader}/>
+                    <img className="img-logo" src="https://signature.enzyme.es/AF-ENZYME-Logotipo-RGB-POSITIVO.svg"/>
                     <p>Signature generator</p>
                 </div>
 
