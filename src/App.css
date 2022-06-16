@@ -1,32 +1,132 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;600;800&family=Manrope:wght@200;300;400;600;800&display=swap');
+
+:root{
+   --primary: #2D3A49;
+   --secondary: #D9FFA2;
+   --tertiary: #E6E7D0;
+   --font-family: 'Epilogue', sans-serif;
+}
+*{
+  
+  color: var(--primary);
+}
+body{
+  font-family: var(--font-family);
+  background-color: var(--secondary);
+}
 .App {
   text-align: center;
+  min-height: 10vh;
 }
+.header{
+  margin: 50px auto;
+  width: 100%;
+  background-color: var(--secondary);
 
-.App-logo {
-  height: 40vmin;
+}
+.img-logo {
+  width: 40vmin;
   pointer-events: none;
 }
+
+
+.container{
+  position: relative;
+  max-width: 1368px;
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+.container.column{
+  flex-flow: column nowrap;
+  
+}
+.columns{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.form-column{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 45%;
+  margin: 10px 2.5%;
+}
+.form-column > form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.signature-column{
+  background-color: #fff;
+  width: 45%;
+  margin: 10px 2.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.signature{
+  text-align: left;
+}
+.container-buttons{
+  display: block;
+}
+.button-style{
+  padding: 7.5px 10px;
+  color: var(--secondary);
+  background-color: var(--primary);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 2px solid var(--primary);
+  margin: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+}
+.button-style:hover{
+  color: var(--primary);
+  background-color: var(--secondary);
+  transition: 0.3s all ease-in-out;
+}
+.footer-sutil{
+  align-self: flex-end;
+  background-color: var(--primary);
+  width: 100%;
+}
+
+.footer-sutil > p{
+  color: var(--secondary);
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.heart{
+  font-size: 20px;
+  margin: 0 3px;
+  animation: aumento 0.25s alternate infinite ease-in-out;
+}
+@keyframes aumento {
+  0%   {transform: scale(1);}
+  100% {transform: scale(1.2);}
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media(max-width: 800px){
+  .container{
+    width: 90%
+  }
+  .columns{
+    flex-flow: column nowrap;
+  }
 }
 
-.App-link {
-  color: #61dafb;
-}
+
 
 @keyframes App-logo-spin {
   from {
