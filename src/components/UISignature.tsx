@@ -1,6 +1,5 @@
 import React from "react";
-import Signature from "./firm";
-import Firm from '../components/firm'
+import Signature from '../components/firmm'
 import '../index.css'
 import { getValue } from "@testing-library/user-event/dist/utils";
 import { Button, FormControlLabel, Switch, TextField, Typography } from "@material-ui/core";
@@ -33,7 +32,10 @@ const initialState: State = {
 
  export function UISignature () {
     const [state, setState] = React.useState<State>(initialState)
-    
+
+ 
+
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.name === "withPhone" || event.target.name === "withCalendar") {
             setState((prevState) => ({
@@ -54,6 +56,7 @@ const initialState: State = {
     };
 const enoughData = () => {
     let progress = 100;
+    
     if (state.withCalendar && state.withPhone){
         if(
            state.fullName &&
@@ -63,7 +66,7 @@ const enoughData = () => {
            state.calendarLink
         ){
             return(
-            <Firm  
+            <Signature  
                 fullName={state.fullName} 
                 position={state.position} 
                 mail={state.mail} 
@@ -91,7 +94,7 @@ const enoughData = () => {
                state.calendarLink
             ){
                 return(
-                    <Firm  
+                    <Signature  
                         fullName={state.fullName} 
                         position={state.position} 
                         mail={state.mail} 
@@ -119,7 +122,7 @@ const enoughData = () => {
                state.phone
             ){
                 return(
-                    <Firm  
+                    <Signature  
                     fullName={state.fullName} 
                     position={state.position} 
                     mail={state.mail} 
@@ -149,7 +152,7 @@ const enoughData = () => {
             
          ){
              return(
-            <Firm  
+            <Signature  
                  fullName={state.fullName} 
                  position={state.position} 
                  mail={state.mail} 
@@ -229,8 +232,8 @@ return(
                             value={state.position}
                             onChange={handleChange}
                         />  
-                        
-                        <input 
+                       <div className="check--group">
+                        <input className="check--input" 
                             type="checkbox"
                             id="isPhoneChecked"
                             name="withPhone"
@@ -238,8 +241,10 @@ return(
                             onChange={handleChange}
 
                         />
-                        <label>{state.withPhone ? "Movil personal" : "Movil de Enzyme"}</label>
+                        <label className="check--label">{state.withPhone ? "Movil personal" : "Movil de Enzyme"}</label>
                       
+                        </div> 
+                        
                         {state.withPhone &&(
                                 <input 
                                 type="text"
@@ -265,15 +270,17 @@ return(
 
 
 
-
-                        <input 
+                        <div className="check--group">
+                        <input className="check--input" 
                             type="checkbox"
                             id="isCalendarChecked"
                             name="withCalendar"
                             checked={state.withCalendar}
                             onChange={handleChange}
                         />
-                         <label>{state.withCalendar ? "Enlace de reunion google meet" : "Sin enlace de reunión"}</label>
+                         <label className="check--label">{state.withCalendar ? "Enlace de reunion google meet" : "Sin enlace de reunión"}</label>
+                        </div>
+                        
                        
                         
                         {state.withCalendar &&(
@@ -299,14 +306,18 @@ return(
                          </form>
                     </div>
                     <div className="signature-column">
+                        <div className="progress">
+                            {/*actualProcess*/}
+                        </div>
                         {enoughData()}
                     </div>
                 </div>
 
-                <div className='footer-sutil'>
+               
+        </div>
+        <div className='footer-sutil'>
           <p>Made with <div className='heart'>&#128153;</div>  from Enzyme Factory</p>
       </div> 
-        </div>
         
     </>
 )
