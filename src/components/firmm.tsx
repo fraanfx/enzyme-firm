@@ -23,7 +23,7 @@ const Signature = (props:SignatureProps) =>{
                         <td valign="top" align='left' rowSpan={1}>
                             <a href="http://enzyme.biz/" target="_blank" rel='noreferrer'>
                                 <img
-                                    src={REnzyme}
+                                    src="https://signature.enzyme.es/firm-logo.png"
                                     alt="Enzyme Logo"
                                     width="154.64px"
                                     height="31px"
@@ -35,7 +35,7 @@ const Signature = (props:SignatureProps) =>{
                         </td>
                    </tr>
             {/*Name */}
-            <tr style={{marginBottom: '-20px'}}>
+            <tr style={{marginBottom: '15px'}}>
                 <td><b style={{fontFamily: 'Arial',
                 fontStyle: 'normal',
                 fontWeight: '700',
@@ -52,7 +52,8 @@ const Signature = (props:SignatureProps) =>{
                 fontSize: '16px',
                 lineHeight: '18px',
                 color: '#2D3A49',
-                marginBottom: '-4px'}}>{props.position}</p></td>
+                marginTop: '0px',
+                marginBottom: '10px'}}>{props.position}</p></td>
             </tr>
             {/*Telf */}
             <tr>
@@ -62,6 +63,7 @@ const Signature = (props:SignatureProps) =>{
                         fontWeight: '400',
                         fontSize: '16px',
                         lineHeight: '18px',
+                        marginBottom: '15px',
                         color: '#2D3A49'}}>M. +34 {props.phone}
                     </a>
                 </td>
@@ -74,7 +76,8 @@ const Signature = (props:SignatureProps) =>{
                      </tr>
             
                     {props.calendarLink !== "none" &&
-                        <tr>
+                        <tr style={{marginTop: '10px',
+                        marginBottom: '10px'}}>
                             <td  rowSpan={1}>
                                 <p> Puedes agendar una reunión conmigo en el siguiente 
                                     <a href={props.calendarLink} target="_blank" rel="noreferrer" style={{fontFamily: 'Arial',
@@ -83,6 +86,8 @@ const Signature = (props:SignatureProps) =>{
                                     color:'#2D3A49',
                                     fontSize: '16px',
                                     lineHeight: '18.4px',
+                                    marginTop: '10px',
+                                    marginBottom: '10px',
                                     textDecoration: 'underline',}}> link
                                     </a> 
                                 </p> 
@@ -126,14 +131,14 @@ const Signature = (props:SignatureProps) =>{
                     <tr>
                         <td>
                             <a style={{marginRight: "10px",}} href={"https://www.linkedin.com/company/enzymeadvisinggroup/mycompany/"} rel="noreferrer" target="_blank">
-                                <img src={RLinkedin} width={"22px"} height={"22px"} alt={"Linkedin"}/>
+                                <img src="https://signature.enzyme.es/firm-link.png" width={"22px"} height={"22px"} alt={"Linkedin"}/>
                             </a>
                             <a style={{marginRight: "10px",}} href={"https://enzyme.biz/blog"} rel="noreferrer" target="_blank">
-                                <img src={RBlog} width={"22px"} height={"22px"} alt={"Blog"}/>
+                                <img src="https://signature.enzyme.es/firm-blog.png" width={"22px"} height={"22px"} alt={"Blog"}/>
                             </a>
                        
                             <a href={"http://enzyme.biz/recursos"} target="_blank" rel="noreferrer">
-                                <img src={RDesc} width={"22px"} height={"22px"} alt={"Descargable"}/>
+                                <img src="https://signature.enzyme.es/firm-descargar.png" width={"22px"} height={"22px"} alt={"Descargable"}/>
                             </a>
                         </td>
                     </tr>

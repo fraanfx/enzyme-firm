@@ -115,6 +115,7 @@ body{
   cursor: pointer;
   text-decoration: none;
   transition: 0.3s all ease-in-out;
+  align-self: center;
 }
 .button-style:hover{
   color: var(--primary);
