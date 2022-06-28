@@ -4,7 +4,7 @@
 
 :root{
    --primary: #2D3A49;
-   --secondary: #D9FFA2;
+   --secondary: #fff;
    --tertiary: #E6E7D0;
    --font-family: 'Epilogue', sans-serif;
 }
@@ -103,25 +103,73 @@ body{
   flex-flow: row nowrap;
 }
 .button-style{
+  display: inline-block;
+    text-align: center;
+    align-items: flex-start;
   padding: 7.5px 10px;
   color: var(--secondary);
   background-color: var(--primary);
   text-transform: uppercase;
   font-size: 14px;
+  line-height: normal;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 3px;
   border: 2px solid var(--primary);
   margin: 10px 20px;
   cursor: pointer;
   text-decoration: none;
   transition: 0.3s all ease-in-out;
   align-self: center;
+  box-sizing: border-box;
+  text-indent: 0px;
+  appearance: auto;
+  writing-mode: horizontal-tb !important;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: auto;
+  font-style: normal;
 }
 .button-style:hover{
   color: var(--primary);
   background-color: var(--secondary);
   transition: 0.3s all ease-in-out;
 }
+
+.button-style-borrar{
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+padding: 7.5px 10px;
+
+text-transform: uppercase;
+font-size: 14px;
+line-height: normal;
+font-weight: 600;
+border-radius: 3px;
+border: 2px solid var(--primary);
+margin: 10px 20px;
+cursor: pointer;
+text-decoration: none;
+
+align-self: center;
+box-sizing: border-box;
+text-indent: 0px;
+appearance: auto;
+writing-mode: horizontal-tb !important;
+letter-spacing: normal;
+word-spacing: normal;
+text-rendering: auto;
+font-style: normal;
+  color: var(--primary);
+  background-color: var(--secondary);
+  transition: 0.3s all ease-in-out;
+}
+.button-style-borrar:hover{
+  color: var(--secondary);
+  background-color: var(--primary);
+  transition: 0.3s all ease-in-out;
+}
+
 .footer-sutil{
   align-self: flex-end;
   background-color: var(--primary);

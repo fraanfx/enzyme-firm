@@ -1,5 +1,5 @@
-import React from "react";
-import Signature from '../components/firmm'
+import React, { useState } from "react";
+import Signature from '../components/firm'
 import '../index.css'
 import { getValue } from "@testing-library/user-event/dist/utils";
 import { Button, FormControlLabel, Switch, TextField, Typography } from "@material-ui/core";
@@ -10,6 +10,8 @@ export interface SignatureProps {
     mail: string;
     phone: string;
     calendarLink: string;
+    prefix: string;
+    
 }
 
 
@@ -17,6 +19,8 @@ interface State extends SignatureProps {
     withPhone: boolean;
     withCalendar: boolean;
     copied: boolean;
+    progress: number;
+   
 }
 
 const initialState: State = {
@@ -25,6 +29,8 @@ const initialState: State = {
     mail: "",
     phone: "",
     calendarLink: "",
+    prefix: "",
+    progress: 100,
     withPhone: false,
     withCalendar: false,
     copied: false,
@@ -55,7 +61,9 @@ const initialState: State = {
         return JSON.stringify(state) === JSON.stringify(initialState);
     };
 const enoughData = () => {
-    let progress = 100;
+    
+   
+    
     
     if (state.withCalendar && state.withPhone){
         if(
@@ -71,6 +79,7 @@ const enoughData = () => {
                 position={state.position} 
                 mail={state.mail} 
                 phone={state.phone} 
+                prefix="M. "
                 calendarLink={state.calendarLink}  
             />
 
@@ -81,10 +90,17 @@ const enoughData = () => {
                     ["fullName", "position", "mail", "phone", "calendarLink"].includes(key)
                 ) {
                     if(getValue.length === 0){
-                        progress = progress -20;
+                            state.progress = state.progress -20;
+                        
                     }
                 }
             });
+            return(
+                <>
+                        <p>Introduce más datos para visualizar tu firma</p>
+                </>
+                
+            )
         }
     } else if (state.withCalendar){
             if(
@@ -98,6 +114,7 @@ const enoughData = () => {
                         fullName={state.fullName} 
                         position={state.position} 
                         mail={state.mail} 
+                        prefix="T. "
                         phone="902 026 289" 
                         calendarLink={state.calendarLink}  
                     />
@@ -108,10 +125,15 @@ const enoughData = () => {
                         ["fullName", "position", "mail", "calendarLink"].includes(key)
                     ) {
                         if(getValue.length === 0){
-                            progress = progress -25;
+                            state.progress = state.progress -25;
                         }
                     }
                 });
+                return(
+                    <>
+                        <p>Introduce más datos para visualizar tu firma</p>
+                    </>
+                )
             }
         
     }else if(state.withPhone){
@@ -126,6 +148,7 @@ const enoughData = () => {
                     fullName={state.fullName} 
                     position={state.position} 
                     mail={state.mail} 
+                    prefix="M. "
                     phone={state.phone} 
                     calendarLink="none"  
                 />
@@ -136,10 +159,16 @@ const enoughData = () => {
                         ["fullName", "position", "mail", "phone"].includes(key)
                     ) {
                         if(getValue.length === 0){
-                            progress = progress -25;
+                            state.progress = state.progress -25;
                         }
                     }
                 });
+                return(
+                    <>
+                        <p>Introduce más datos para visualizar tu firma</p>
+                    </>
+                    
+                )
             }
             
 
@@ -156,6 +185,7 @@ const enoughData = () => {
                  fullName={state.fullName} 
                  position={state.position} 
                  mail={state.mail} 
+                 prefix="T. "
                  phone="902 026 289" 
                  calendarLink="none"  
              />
@@ -166,11 +196,16 @@ const enoughData = () => {
                      ["fullName", "position", "mail"].includes(key)
                  ) {
                      if(getValue.length === 0){
-                         progress = progress -33;
+                         state.progress = state.progress -33;
                      }
                  }
              });
          }
+         return(
+            <>
+                        <p>Introduce más datos para visualizar tu firma</p>
+            </>
+        )
 
     }
 }
@@ -301,7 +336,7 @@ return(
                               
                             <a className="button-style" onClick={copyToClipboard}>Copiar firma</a> 
                             <a className="button-style" href="http://gmail.com/#settings/general" target="_blank" rel="noreferrer">Cambiar firma</a>                      
-                            <button className="button-style"  onClick={clearState}>Limpiar estado</button>
+                            <button className="button-style-borrar"  onClick={clearState}>Borrar datos</button>
                         </div> 
                          </form>
                     </div>
