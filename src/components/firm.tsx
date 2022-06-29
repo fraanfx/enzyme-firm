@@ -127,7 +127,8 @@ const Signature = (props:SignatureProps) =>{
        
           
                 {/*Sección logos*/}
-                <tr >
+
+                {/* <tr >
                     <tr>
                         <td>
                             <a style={{marginRight: "10px",}} href={"https://www.linkedin.com/company/enzymeadvisinggroup/mycompany/"} rel="noreferrer" target="_blank">
@@ -142,7 +143,7 @@ const Signature = (props:SignatureProps) =>{
                             </a>
                         </td>
                     </tr>
-                </tr>
+                </tr>  */}
   
 
     
